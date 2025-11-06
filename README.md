@@ -35,3 +35,13 @@ CONTROLLO ANELLO NEOPIXEL CON DUE SENSORI TOUCH
   - EEPROM (inclusa nell'ambiente ESP32)
   
   ============================================================================
+
+  Lo sketch "Lampada_Standby_Memory" non utilizza la memoria EEPROM ma la RAM della scheda e:
+ 
+    - Le impostazioni (animazione e luminosità) vengono mantenute in RAM
+    - Quando la lampada è "spenta", i LED si spengono ma l'ESP32 resta alimentato
+    - All'accensione successiva, riprende dall'ultima configurazione
+    - NOTA: Se togli completamente l'alimentazione, le impostazioni si resettano
+
+    Il resto è uguale all'altro sketch
+  
