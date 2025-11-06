@@ -44,4 +44,17 @@ CONTROLLO ANELLO NEOPIXEL CON DUE SENSORI TOUCH
     - NOTA: Se togli completamente l'alimentazione, le impostazioni si resettano
 
     Il resto è uguale all'altro sketch
+
+    ==============================================================================
+
+    Lo sketch "Lampada_con_Preferences" utilizza la memoria flash e non rischia di bruciare le celle della EEPROM usati perché Preferences usa      internamente la partizione NVS (Non-Volatile Storage) che fa Wear Leveling.
+
+    MEMORIA PERSISTENTE (usando Preferences):
+    - L'ultima animazione utilizzata viene salvata nella memoria flash
+    - L'ultima luminosità utilizzata viene salvata nella memoria flash
+    - Ad ogni accensione, la lampada riprende dall'ultima configurazione
+    - Preferences è più sicuro e moderno rispetto all'uso diretto di EEPROM perché:
+      Distribuisce le scritture su celle diverse
+      Evita di "bruciare" sempre le stesse celle
+      Prolunga la vita della memoria
   
